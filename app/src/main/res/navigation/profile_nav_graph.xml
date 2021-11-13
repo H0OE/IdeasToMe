@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/profile_nav_graph"
+    app:startDestination="@id/postsFragment">
+
+    <fragment
+        android:id="@+id/favoritesFragment"
+        android:name="com.jarho.ideasme.profile.navigation.FavoritesFragment"
+        android:label="FavoritesFragment" />
+    <fragment
+        android:id="@+id/postsFragment"
+        android:name="com.jarho.ideasme.profile.navigation.PostsFragment"
+        android:label="PostsFragment" />
+</navigation>

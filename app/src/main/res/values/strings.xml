@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">IdeasToMe</string>
+
+    <string name="Login">LogIn with Google</string>
+    <string name="search">Search</string>
+    <string name="name_bottom_home">Home</string>
+    <string name="name_bottom_add">Add</string>
+    <string name="name_bottom_user">Profile</string>
+    <string name="addIdea">My idea is...</string>
+    <string name="addTag">Add a tag</string>
+    <string name="addPost">Post</string>
+    <string name="name_bottom_favorites">favorites</string>
+    <string name="name_bottom_posts">Posts</string>
+
+
+</resources>

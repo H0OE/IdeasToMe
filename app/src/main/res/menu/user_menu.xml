@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item
+        android:id="@+id/postsFragment"
+        android:icon="@drawable/ic_dynamic_feed"
+        android:title="@string/name_bottom_posts"
+        android:iconTint="@color/normal"
+        android:iconTintMode="add"/>
+
+    <item
+        android:id="@+id/favoritesFragment"
+        android:icon="@drawable/ic_love"
+        android:title="@string/name_bottom_favorites"
+
+        android:iconTint="@color/normal"
+        android:iconTintMode="add"/>
+
+
+
+</menu>

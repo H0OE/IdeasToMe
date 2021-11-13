@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+
+    <item
+        android:id="@+id/homeFragment2"
+        android:icon="@drawable/ic_home_black"
+        android:title="@string/name_bottom_home" />
+    <item
+        android:id="@+id/addFragment2"
+        android:icon="@drawable/ic_add_circle_black"
+        android:title="@string/name_bottom_add" />
+    <item
+        android:id="@+id/profileFragment"
+        android:icon="@drawable/ic_account_circle_black"
+        android:title="@string/name_bottom_user" />
+
+</menu>

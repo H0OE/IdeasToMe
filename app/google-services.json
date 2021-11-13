@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "913976700295",
+    "project_id": "ideastome-998ea",
+    "storage_bucket": "ideastome-998ea.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:913976700295:android:27a4c51f1430390847b722",
+        "android_client_info": {
+          "package_name": "com.jarho.ideasme"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "913976700295-29fco6sqli2bf41n8kll4f7bqcams9uj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDw9T5x9nI2z43mlEpLtXGl02L_3quvaRI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "913976700295-29fco6sqli2bf41n8kll4f7bqcams9uj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
