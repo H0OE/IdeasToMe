@@ -1,4 +1,4 @@
-package com.jarho.ideasme.home
+package com.jarho.ideasme.viewModel
 
 import android.view.LayoutInflater
 import android.view.View

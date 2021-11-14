@@ -1,15 +1,18 @@
 package com.jarho.ideasme.prefs
 
 import android.content.Context
+import android.net.Uri
+import com.google.firebase.auth.FirebaseUser
 
 class Prefs(val context: Context) {
 
-    val SHARED_NAME = "auth"
-    val SHARED_EMAIL = "email"
-    val SHARED_USER = "user"
-    val SHARED_BIO = "bio"
+    private val SHARED_NAME = "auth"
+    private val SHARED_EMAIL = "email"
+    private val SHARED_PHOTO = "photo"
+    private val SHARED_USER = "user"
 
-    //TODO separar gmail
+
+
     val storage = context.getSharedPreferences(SHARED_NAME, 0)
 
     fun saveEmail(email: String) {
@@ -19,8 +22,20 @@ class Prefs(val context: Context) {
     fun getEmail(): String {
         return storage.getString(SHARED_EMAIL, "")!!
     }
+    fun savePhoto(photo: Uri?) {
+        storage.edit().putString(SHARED_PHOTO, photo?.toString()).apply()
+    }
 
+    fun getPhoto(): String {
+        return storage.getString(SHARED_PHOTO, "")!!
+    }
+    fun saveUser(user: String) {
+        storage.edit().putString(SHARED_USER, user).apply()
+    }
 
+    fun getUser(): String {
+        return storage.getString(SHARED_USER, "")!!
+    }
 
 
     fun erase() {

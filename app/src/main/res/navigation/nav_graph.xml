@@ -35,4 +35,13 @@
         android:name="com.jarho.ideasme.NavigationFragment"
         android:label="NavigationFragment"
         tools:layout="@layout/fragment_navigation"/>
+    <fragment
+        android:id="@+id/profileFragment2"
+        android:name="com.jarho.ideasme.profile.ProfileFragment"
+        android:label="ProfileFragment"
+        tools:layout="@layout/fragment_profile">
+        <action
+            android:id="@+id/action_profileFragment2_to_loginFragment3"
+            app:destination="@id/loginFragment3" />
+    </fragment>
 </navigation>

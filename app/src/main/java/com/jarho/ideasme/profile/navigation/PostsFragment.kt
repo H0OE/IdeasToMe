@@ -5,17 +5,26 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.NavController
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.LinearSnapHelper
+import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.jarho.ideasme.R
 import com.jarho.ideasme.databinding.FragmentMinePostsBinding
 import com.jarho.ideasme.databinding.FragmentProfileBinding
+import com.jarho.ideasme.model.FeedModel
+import com.jarho.ideasme.viewModel.FeedAdapter
+import com.jarho.ideasme.viewModel.PostsViewModel
 
 class PostsFragment  : Fragment() {
     private var _binding: FragmentMinePostsBinding? = null
     private val binding get() = _binding!!
-    private lateinit var navController: NavController
-    private lateinit var bottomNavigationView: BottomNavigationView
 
+
+    private val feedAdapter = FeedAdapter()
+    private val postsModel: PostsViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -31,6 +40,20 @@ class PostsFragment  : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        val recyclerView = view.findViewById<RecyclerView>(R.id.rvMinePosts)
+
+        recyclerView.adapter = feedAdapter
+        recyclerView.layoutManager =
+            LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+
+        LinearSnapHelper().attachToRecyclerView(recyclerView)
+
+        postsModel.postList.observe(viewLifecycleOwner, {
+            feedAdapter.addAll(it as MutableList<FeedModel>)
+        }
+        )
+        postsModel.updateMinePost()
+
     }
 
 

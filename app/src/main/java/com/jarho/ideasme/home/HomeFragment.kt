@@ -8,22 +8,21 @@ import android.view.ViewGroup
 import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.setupWithNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.LinearSnapHelper
 import androidx.recyclerview.widget.RecyclerView
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.jarho.ideasme.R
 import com.jarho.ideasme.databinding.FragmentHomeBinding
 import com.jarho.ideasme.model.FeedModel
+import com.jarho.ideasme.viewModel.FeedAdapter
+import com.jarho.ideasme.viewModel.PostsViewModel
 
 class HomeFragment:Fragment() {
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
 
     private val feedAdapter = FeedAdapter()
-    private val feedModel: FeedViewModel by activityViewModels()
+    private val postsModel: PostsViewModel by activityViewModels()
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -58,11 +57,11 @@ class HomeFragment:Fragment() {
 
         LinearSnapHelper().attachToRecyclerView(recyclerView)
 
-        feedModel.feedList.observe(viewLifecycleOwner, {
+        postsModel.feedList.observe(viewLifecycleOwner, {
             feedAdapter.addAll(it as MutableList<FeedModel>)
         }
         )
-        feedModel.updatePost()
+        postsModel.updatePost()
 
     }
 }
