@@ -64,8 +64,13 @@ class HomeFragment:Fragment() {
             feedAdapter.addAll(it as MutableList<FeedModel>)
         }
         )
-        postsModel.updatePost()
         searching()
+
+        if (binding.textsearch.query.isNullOrBlank()){
+            postsModel.updatePost()
+
+        }
+
 
 
         feedAdapter.setOnFeedItemClickListener {
@@ -117,7 +122,6 @@ class HomeFragment:Fragment() {
                 if (newText != null) {
                     postsModel.updateSearch(newText)
                 }
-
                 return false
             }
 
