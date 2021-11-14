@@ -5,12 +5,17 @@
     android:layout_height="280dp"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/cardFeed"
+    android:layout_marginTop="30dp"
     android:background="@drawable/round_button2">
 
     <View
+        android:id="@+id/view"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:background="@drawable/round_bar"/>
+        android:background="@drawable/round_bar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
     <TextView
         android:id="@+id/tvPost"
         android:layout_width="match_parent"
@@ -37,7 +42,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tvPost" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/tvName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
@@ -48,17 +53,33 @@
         app:layout_constraintStart_toEndOf="@+id/imgUser"
         app:layout_constraintTop_toBottomOf="@+id/tvPost" />
 
-    <ImageView
-        android:id="@+id/imgLove"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="30dp"
-        android:src="@drawable/ic_love"
-        android:layout_marginEnd="30sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <TextView
+        android:id="@+id/tvTag1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
         app:layout_constraintEnd_toStartOf="@+id/imgContact"
-        app:layout_constraintTop_toBottomOf="@+id/tvPost"
-        app:tint="@color/normal" />
+        app:layout_constraintStart_toEndOf="@+id/tvName"
+        app:layout_constraintTop_toBottomOf="@+id/view" />
+    <TextView
+        android:id="@+id/tvTag2"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        app:layout_constraintEnd_toStartOf="@+id/imgContact"
+        app:layout_constraintStart_toEndOf="@+id/tvName"
+        app:layout_constraintTop_toBottomOf="@+id/tvTag1" />
+    <TextView
+        android:id="@+id/tvTag3"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        app:layout_constraintEnd_toStartOf="@+id/imgContact"
+        app:layout_constraintStart_toEndOf="@+id/tvName"
+        app:layout_constraintTop_toBottomOf="@+id/tvTag2" />
+
 
     <ImageView
         android:id="@+id/imgContact"

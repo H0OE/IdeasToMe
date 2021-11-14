@@ -12,6 +12,16 @@ class FeedRepository (val network : FeedNetworkController){
         }
     }
 
+    fun getAllMyPosts() : Flow<List<FeedModel>> {
+        return flow {
+            emit(network.getAllMyPosts())
+        }
+    }
+    fun getAllSearch(text:String) : Flow<List<FeedModel>> {
+        return flow {
+            emit(network.getAllSearch(text))
+        }
+    }
 
 
 }

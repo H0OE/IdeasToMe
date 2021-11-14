@@ -1,15 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/profile_nav_graph"
     app:startDestination="@id/postsFragment">
 
     <fragment
         android:id="@+id/favoritesFragment"
         android:name="com.jarho.ideasme.profile.navigation.FavoritesFragment"
-        android:label="FavoritesFragment" />
+        android:label="FavoritesFragment"
+        tools:layout="@layout/fragment_favorites"/>
     <fragment
         android:id="@+id/postsFragment"
         android:name="com.jarho.ideasme.profile.navigation.PostsFragment"
-        android:label="PostsFragment" />
+        android:label="PostsFragment"
+        tools:layout="@layout/fragment_mine_posts">
+        <action
+            android:id="@+id/action_postsFragment_to_popUp_info2"
+            app:destination="@id/popUp_info2" />
+        <argument android:name="user" />
+        <argument android:name="email" />
+        <argument android:name="description" />
+    </fragment>
+    <dialog
+        android:id="@+id/popUp_info2"
+        android:name="com.jarho.ideasme.home.PopUp_info"
+        android:label="PopUp_info"
+        tools:layout="@layout/popup_info"/>
 </navigation>

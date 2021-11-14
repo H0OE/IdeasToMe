@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.NavController
@@ -73,13 +74,19 @@ class ProfileFragment : Fragment() {
 
     fun logOut(){
         binding.ivContact.setOnClickListener {
-            prefs.erase()
-            findNavController().navigate(R.id.action_profileFragment_to_mainActivity)
+            val bundle = bundleOf(
 
+                "email" to prefs.getEmail(),
+                "user" to binding.tvUserName.text)
+
+            findNavController().navigate(R.id.action_profileFragment_to_popUp_info,bundle)
         }
         binding.viewContact.setOnClickListener {
-            prefs.erase()
-            findNavController().navigate(R.id.action_profileFragment_to_mainActivity)
+            val bundle = bundleOf(
+                "email" to FirebaseAuth.getInstance().currentUser?.email.toString(),
+                "user" to FirebaseAuth.getInstance().currentUser?.displayName.toString())
+
+            findNavController().navigate(R.id.action_homeFragment2_to_popUp_info,bundle)
 
         }
     }

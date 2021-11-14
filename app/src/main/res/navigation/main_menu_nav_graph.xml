@@ -9,7 +9,18 @@
         android:id="@+id/homeFragment2"
         android:name="com.jarho.ideasme.home.HomeFragment"
         android:label="HomeFragment"
-        tools:layout="@layout/fragment_home"/>
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment2_to_popUp_info"
+            app:destination="@id/popUp_info" />
+        <argument
+            android:name="description"
+            app:argType="string" />
+        <argument
+            android:name="email"
+            app:argType="string" />
+        <argument android:name="user" />
+    </fragment>
     <fragment
         android:id="@+id/addFragment2"
         android:name="com.jarho.ideasme.add.AddFragment"
@@ -23,10 +34,24 @@
         <action
             android:id="@+id/action_profileFragment_to_mainActivity"
             app:destination="@id/mainActivity" />
+        <action
+            android:id="@+id/action_profileFragment_to_popUp_info"
+            app:destination="@id/popUp_info" />
+        <argument android:name="email" />
+        <argument android:name="user" />
+
+
+
+
     </fragment>
     <activity
         android:id="@+id/mainActivity"
         android:name="com.jarho.ideasme.MainActivity"
         android:label="activity_main"
         tools:layout="@layout/activity_main" />
+    <dialog
+        android:id="@+id/popUp_info"
+        android:name="com.jarho.ideasme.home.PopUp_info"
+        android:label="PopUp_info"
+        tools:layout="@layout/popup_info"/>
 </navigation>

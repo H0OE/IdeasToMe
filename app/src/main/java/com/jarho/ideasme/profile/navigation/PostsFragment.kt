@@ -4,9 +4,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.NavController
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.LinearSnapHelper
 import androidx.recyclerview.widget.RecyclerView
@@ -53,6 +55,26 @@ class PostsFragment  : Fragment() {
         }
         )
         postsModel.updateMinePost()
+
+        feedAdapter.setOnFeedItemClickListener {
+
+            val userNick = it.userNick
+
+
+            val description: String = it.description
+            val userEmail : String = it.userMail
+            val urlImage = it.urlImage
+
+
+
+            val bundle = bundleOf(
+                "description" to description,
+                "email" to userEmail,
+                "user" to userNick)
+
+            findNavController().navigate(R.id.action_postsFragment_to_popUp_info2,bundle)
+
+        }
 
     }
 

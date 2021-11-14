@@ -9,4 +9,6 @@ interface FeedNetworkController {
     suspend fun getAllFavoritesPosts(): List<FeedModel>
 
     suspend fun getAllMyPosts(): List<FeedModel>
+    suspend fun getAllSearch(search:String): List<FeedModel>
+
 }

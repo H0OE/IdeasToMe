@@ -28,9 +28,20 @@ class FeedNetworkControllerImp : FeedNetworkController {
         return response.toObjects(FeedModel::class.java)    }
 
     override suspend fun getAllMyPosts(): List<FeedModel> {
-        val response = db.collection("lovedPosts").orderBy(
-            "created", Query.Direction.DESCENDING).get().await()
+        val tempt = db.collection("posts")
+            .whereEqualTo("userMail", prefs.getEmail())
+            .orderBy("created", Query.Direction.DESCENDING)
+
+
+        val response =tempt.get().await()
         return response.toObjects(FeedModel::class.java)    }
+
+    override suspend fun getAllSearch(search:String): List<FeedModel> {
+        val response = db.collection("posts").orderBy(
+            "userNick").startAt(search).endAt(search + "\uf8ff").get().await()
+
+        return response.toObjects(FeedModel::class.java)   }
+
 
 
 }

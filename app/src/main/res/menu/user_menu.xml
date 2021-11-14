@@ -9,13 +9,8 @@
         android:iconTint="@color/normal"
         android:iconTintMode="add"/>
 
-    <item
-        android:id="@+id/favoritesFragment"
-        android:icon="@drawable/ic_love"
-        android:title="@string/name_bottom_favorites"
 
-        android:iconTint="@color/normal"
-        android:iconTintMode="add"/>
+
 
 
 

@@ -41,10 +41,12 @@
         android:inputType="textShortMessage"
         android:layout_marginHorizontal="30dp"
         android:layout_marginVertical="30dp"
+
+
         android:background="@drawable/round_bar"
         android:hint="@string/addTag"
         android:textAlignment="center"
-
+        android:textSize="24sp"
         android:minHeight="50dp"
         android:textColor="@color/text"
         android:textColorHint="@color/normal"
@@ -52,38 +54,30 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText" />
 
+
+
+
+
     <com.google.android.material.chip.ChipGroup
         android:id="@+id/chipGroup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="30dp"
         android:layout_marginVertical="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        style="@style/CustomChip"
         app:layout_constraintTop_toBottomOf="@+id/etFilter"
         app:singleSelection="true">
 
-        <com.google.android.material.chip.Chip
-            style="@style/CustomChip"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Kotlin" />
 
-        <com.google.android.material.chip.Chip
-            style="@style/CustomChip"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Java" />
 
-        <com.google.android.material.chip.Chip
-            style="@style/CustomChip"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Dart" />
 
 
     </com.google.android.material.chip.ChipGroup>
 
     <Button
+        android:id="@+id/btnPost"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
        android:background="@drawable/round_button2"
